@@ -37,8 +37,6 @@ defaults:
       layout: "writer"
 
 # Social
-twitter_username: verbnoun
-github_username: verbnoun
 
 # Exclude from processing
 exclude:

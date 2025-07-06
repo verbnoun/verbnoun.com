@@ -1,43 +1,113 @@
 ---
 layout: default
+permalink: /
 ---
 
-<div class="hero-section">
+<div class="page-lead">
   <div class="container">
-    <h1><span>Verb</span> <span class="slash">/</span> <span>Noun</span></h1>
-    
-    <nav class="main-nav">
-      <a href="/articles/" class="nav-link">Articles</a>
-      <a href="/writers/" class="nav-link">Writers</a>
-      <a href="/about/" class="nav-link">About</a>
-      <a href="/newsletter/" class="nav-link">Newsletter</a>
-    </nav>
+    <p>Verb Noun is a design discipline publication.</p>
   </div>
 </div>
 
-<div class="recent-articles">
+<div class="articles-archive">
   <div class="container">
-    <h2>Recent Articles</h2>
     {% if site.posts.size > 0 %}
-      <div class="article-grid">
-        {% for post in site.posts limit:3 %}
-          <article class="article-card">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="article-meta">
-              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-              {% if post.author %} • {{ post.author }}{% endif %}
-            </p>
-            <div class="article-excerpt">
-              {% assign paragraphs = post.content | split: '</p>' %}
-              {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
-              {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
+      <div class="article-list">
+        {% for post in site.posts %}
+          <article class="article-item">
+            <div class="article-content">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="article-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                {% if post.author %} • {{ post.author }}{% endif %}
+                {% if post.tags %} • {{ post.tags | join: ', ' }}{% endif %}
+              </p>
+              <div class="article-excerpt">
+                {% assign paragraphs = post.content | split: '</p>' %}
+                {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
+                {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
+              </div>
+              <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
             </div>
           </article>
         {% endfor %}
       </div>
-      <p class="view-all"><a href="/articles/">View all articles →</a></p>
     {% else %}
-      <p>No articles yet. Check back soon for our latest literary explorations.</p>
+      <div class="no-articles">
+        <h2>No articles yet</h2>
+        <p>We're working on bringing you thoughtful design content. Check back soon!</p>
+      </div>
     {% endif %}
   </div>
 </div>
+
+<style>
+.page-lead {
+  background: var(--dark-gray);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.page-lead p {
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.articles-archive {
+  padding: 3rem 0;
+}
+
+.article-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.article-item {
+  background: var(--dark-gray);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.article-item:hover {
+  background: var(--dark-gray);
+}
+
+.article-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article-item h2 a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.article-item h2 a:hover {
+  color: var(--burnt-umber);
+}
+
+.article-meta {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.article-excerpt {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--burnt-umber);
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-gray);
+}
+</style>

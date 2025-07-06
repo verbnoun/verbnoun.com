@@ -4,10 +4,9 @@ title: About
 permalink: /about/
 ---
 
-<div class="page-header">
+<div class="page-lead">
   <div class="container">
-    <h1>About VerbNoun</h1>
-    <p>Words have power. We give them meaning.</p>
+    <p>A critical examination of design as cultural practice.</p>
   </div>
 </div>
 
@@ -39,7 +38,13 @@ permalink: /about/
         <div class="contact-info">
           <h3>Get In Touch</h3>
           <p>Have a story to share? Want to contribute? We'd love to hear from you.</p>
-          <p>Email us at <a href="mailto:hello@verbnoun.com">hello@verbnoun.com</a></p>
+          <p>Email us at <a href="mailto:contact@verbnoun.com">contact@verbnoun.com</a></p>
+        </div>
+        
+        <div class="colophon">
+          <h3>Colophon</h3>
+          <p>Verb Noun is set in Caladea, a serif typeface designed by Carolina Giovagnoli and Andrés Torresi for Huerta Tipográfica. The site is built with Jekyll and hosted on GitHub Pages.</p>
+          <p>The name reflects our belief that language operates through the dynamic relationship between action (verb) and object (noun), movement and substance, process and form.</p>
         </div>
       </div>
     </div>
@@ -47,12 +52,15 @@ permalink: /about/
 </div>
 
 <style>
-.page-header {
+.page-lead {
   background: var(--dark-gray);
-  color: var(--text-white);
-  padding: 3rem 0;
+  padding: 2rem 0;
   text-align: center;
-  border-bottom: 1px solid #333;
+}
+
+.page-lead p {
+  color: var(--text-gray);
+  margin: 0;
 }
 
 .about-section {
@@ -65,10 +73,8 @@ permalink: /about/
 }
 
 .about-text {
-  background: #222;
+  background: var(--dark-gray);
   padding: 3rem;
-  border-radius: 8px;
-  border: 1px solid #333;
 }
 
 .about-text h2 {
@@ -103,11 +109,9 @@ permalink: /about/
 }
 
 .contact-info {
-  background: #111;
+  background: var(--dark-gray);
   padding: 2rem;
-  border-radius: 8px;
   margin-top: 2rem;
-  border: 1px solid #333;
 }
 
 .contact-info h3 {
@@ -126,6 +130,21 @@ permalink: /about/
 
 .contact-info a:hover {
   text-decoration: underline;
+}
+
+.colophon {
+  background: var(--dark-gray);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.colophon h3 {
+  margin-top: 0;
+  color: var(--text-white);
+}
+
+.colophon p {
+  color: var(--text-gray);
 }
 
 @media (max-width: 768px) {

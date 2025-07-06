@@ -7,13 +7,14 @@
 
 :root {
   --burnt-umber: #8A4A37;
-  --dark-gray: #1a1a1a;
+  --dark-gray: #131313;
   --text-white: #ffffff;
   --text-gray: #cccccc;
 }
 
 body {
-  font-family: 'Calibre', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Caladea', 'Noto Serif JP', 'Times New Roman', serif;
+  font-size: 200%;
   background-color: var(--dark-gray);
   color: var(--text-white);
   text-rendering: optimizeLegibility;
@@ -34,7 +35,6 @@ p {
 }
 
 blockquote {
-  border-left: 3px solid var(--burnt-umber);
   padding-left: 2em;
   font-style: italic;
   color: var(--text-gray);
@@ -49,7 +49,6 @@ blockquote {
 /* Header */
 .site-header {
   background: var(--dark-gray);
-  border-bottom: 1px solid #333;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -65,6 +64,7 @@ blockquote {
 .site-title {
   color: var(--text-white);
   text-decoration: none;
+  font-size: 177%;
 }
 
 .site-title .slash {
@@ -110,18 +110,14 @@ blockquote {
 }
 
 .nav-link {
-  background: rgba(255,255,255,0.1);
   color: var(--text-white);
   padding: 0.8rem 1.5rem;
   text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.2);
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  background: rgba(255,255,255,0.2);
-  border-color: var(--burnt-umber);
+  color: var(--burnt-umber);
 }
 
 /* Recent articles */
@@ -143,16 +139,13 @@ blockquote {
 }
 
 .article-card {
-  background: #222;
+  background: var(--dark-gray);
   padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #333;
   transition: transform 0.3s ease;
 }
 
 .article-card:hover {
   transform: translateY(-5px);
-  border-color: var(--burnt-umber);
 }
 
 .article-card h3 {
@@ -191,22 +184,40 @@ blockquote {
   text-decoration: underline;
 }
 
+/* End of page marker */
+.page-end {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--text-gray);
+  font-size: 1.5rem;
+}
+
 /* Footer */
 .site-footer {
-  background: #111;
+  background: var(--dark-gray);
   color: var(--text-gray);
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid #333;
+  padding: 2rem 0 4rem;
 }
 
-.site-footer a {
+.site-footer .container {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-nav a {
   color: var(--text-gray);
   text-decoration: none;
-  margin: 0 1rem;
+  transition: color 0.3s ease;
 }
 
-.site-footer a:hover {
+.footer-nav a:hover {
   color: var(--burnt-umber);
 }
 
@@ -234,6 +245,20 @@ blockquote {
   
   .article-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .site-footer .container {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .footer-nav {
+    gap: 1.5rem;
+  }
+  
+  .page-end {
+    padding: 3rem 0 1.5rem;
   }
 }
 

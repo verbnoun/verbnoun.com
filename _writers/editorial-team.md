@@ -4,7 +4,6 @@ name: "Editorial Team"
 bio: "The editorial team at VerbNoun consists of writers, editors, and literary enthusiasts committed to fostering thoughtful discourse through quality writing."
 social:
   website: "https://verbnoun.com"
-  twitter: "verbnoun"
 ---
 
 The VerbNoun editorial team brings together diverse voices united by a shared commitment to the written word. We believe that literature has the power to illuminate, challenge, and transform—both writers and readers alike.
