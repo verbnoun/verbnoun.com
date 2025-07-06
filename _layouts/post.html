@@ -20,16 +20,6 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.tags %}
-      <footer class="post-footer">
-        <div class="post-tags">
-          <span class="tags-label">Tagged:</span>
-          {% for tag in page.tags %}
-            <a href="/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
-          {% endfor %}
-        </div>
-      </footer>
-    {% endif %}
   </div>
 </article>
 

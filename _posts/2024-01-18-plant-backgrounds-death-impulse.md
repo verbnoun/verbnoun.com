@@ -1,43 +1,67 @@
 ---
 layout: post
 title: "Green Screens: Plant Curation as Digital Mortality Response"
-author: "Dr. Elena Vasquez"
+author: "Mari Minowa"
 tags: ["psychology", "social media", "culture"]
-excerpt: "Behind every carefully curated plant backdrop lies an unconscious negotiation with mortality, a botanical buffer against the digital void."
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 ---
 
-Scroll through any video call, any carefully staged Instagram story, any TikTok filmed in someone's living space, and you'll notice them: the plants. Fiddle leaf figs stretching toward ring lights. Monstera deliciosa cascading behind Ring cameras. Snake plants standing sentinel beside computer monitors. What appears to be simple interior decoration reveals itself, upon closer examination, as something far more complex—a collective psychological response to the peculiar form of mortality that digital existence imposes upon us.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-The death impulse, as Freud conceived it, isn't merely about physical death but about the human tendency toward dissolution, toward returning to an inorganic state. In our hyperconnected age, this impulse manifests in unexpected ways. We feel it in the exhaustion that follows hours of video calls, in the strange emptiness after posting content to the void, in the way our digital selves feel somehow less substantial than our physical ones.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 
-## The Botanical Unconscious
+## Nemo enim ipsam
 
-Plants function as more than background decoration in our digital performances. They serve as living proof of our own vitality, organic totems that assert life in spaces increasingly dominated by screens and pixels. When we position ourselves in front of our carefully tended greenery, we're not just creating an aesthetically pleasing backdrop—we're unconsciously countering the death impulse that digital mediation triggers.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
 
-Consider the psychology of the Zoom background. The virtual backgrounds—those digital overlays of tropical beaches or minimalist offices—feel hollow precisely because they offer no resistance to the death impulse. They are pure simulation, devoid of the metabolic processes that mark living systems. But position a thriving monstera behind your left shoulder, and something shifts. The frame now contains genuine biological activity, cellular respiration, the quiet drama of photosynthesis.
+### Digital Environment Psychology
 
-This isn't conscious strategy but unconscious wisdom. We intuitively understand that our digital selves need anchoring in biological reality. The plants become transitional objects, helping us navigate the liminal space between physical and virtual existence. They remind viewers—and ourselves—that somewhere beyond the frame exists a person capable of nurturing life, someone embedded in cycles of growth and care that extend beyond the immediate moment of digital transmission.
+Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
 
-## The Curated Wild
+#### Symbolic Representation
 
-The specific plants we choose reveal the complexity of this psychological negotiation. The most popular species for digital backgrounds share certain characteristics: they're architectural rather than chaotic, sculptural rather than sprawling. The fiddle leaf fig with its dramatic, geometric leaves. The bird of paradise with its bold, structural presence. The snake plant with its upright, almost digital aesthetic.
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
 
-These aren't the plants of traditional domesticity—no African violets or geraniums here. Instead, we've embraced flora that feels simultaneously wild and controlled, organic yet graphic. They suggest a kind of curated wilderness, nature that has been edited for digital consumption. It's telling that many of these plants are notoriously difficult to keep alive, requiring specific light conditions and watering schedules that demand attention and care.
+##### Virtual Nature Connection
 
-The challenge itself becomes part of the appeal. In an age where so much of our interaction with the world is mediated and frictionless, caring for these demanding plants offers a form of resistance to digital ease. They can't be optimized or automated. They require presence, attention, the kind of embodied engagement that our screen-based lives increasingly lack.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-## Living Proof
+## Temporibus autem
 
-What we're witnessing isn't just a design trend but a form of collective therapy. The plants serve as evidence of our capacity for nurture in a medium that often feels extractive. They demonstrate patience in platforms designed for instant gratification. They prove our connection to temporal rhythms longer than the notification cycle.
+Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
 
-When someone positions themselves against a backdrop of thriving plants during a video call, they're making an unconscious argument for their own vitality. The greenery becomes a kind of biological credential, proof that despite spending hours staring at screens, they remain connected to the basic processes of life. The plants absorb carbon dioxide and release oxygen even as we speak, engaging in the fundamental exchange that sustains all terrestrial life.
+### Social Media Curation
 
-This botanical backdrop also serves a social function, signaling certain values and competencies to viewers. It suggests someone who can commit to long-term care, who understands natural cycles, who has created a space worth inhabiting. In the context of remote work and digital relationships, these signals carry particular weight.
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.
 
-## The Oxygen of Authenticity
+#### Identity Construction
 
-Perhaps most significantly, plants in digital spaces function as guarantors of authenticity in a medium increasingly dominated by filters, effects, and artificial enhancement. Plants can't be faked—at least not convincingly. Their presence suggests that the space we're seeing is real, inhabited, lived-in. They grow and change and sometimes die, introducing an element of unpredictability into our highly controlled digital presentations.
+Ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
 
-In this way, our unconscious deployment of plants as digital backgrounds represents a sophisticated response to the ontological uncertainty of virtual existence. We may not fully understand why we feel compelled to surround ourselves with greenery when we perform our digital selves, but we understand intuitively that something essential is at stake—our connection to life itself, our resistance to the flattening effect of digital mediation, our insistence that even in virtual spaces, we remain fundamentally biological beings.
+##### Platform Aesthetics
 
-The plants, in other words, keep us alive.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Omnis voluptas
+
+Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. Omnis voluptas assumenda est, omnis dolor repellendus.
+
+### Cultural Responses to Digitalization
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur.
+
+#### Biophilic Design Trends
+
+Aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+##### Screen-mediated Nature
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+## Sed ut perspiciatis
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.
+
+Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
