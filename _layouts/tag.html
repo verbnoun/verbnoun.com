@@ -1,0 +1,132 @@
+---
+layout: default
+---
+
+<div class="page-lead">
+  <div class="container">
+    <h2>{{ page.tag | capitalize }}</h2>
+    <p>{% case page.tag %}
+      {% when 'design' %}Exploring form, function, and aesthetic philosophy
+      {% when 'technology' %}Examining tools, interfaces, and digital culture
+      {% when 'philosophy' %}Critical thinking on ideas and meaning
+      {% when 'psychology' %}Understanding behavior and mental processes
+      {% when 'aesthetics' %}Beauty, taste, and sensory experience
+      {% when 'culture' %}Society, values, and shared human experience
+      {% when 'civilization' %}Human organization and cultural development
+      {% when 'social media' %}Digital platforms and online interaction
+      {% when 'japanese' %}Japanese design philosophy and cultural perspectives
+      {% when 'editorial' %}Perspectives from the editorial team
+      {% when 'introduction' %}Foundational concepts and welcome pieces
+      {% else %}Articles exploring {{ page.tag }} in depth
+      {% endcase %}</p>
+  </div>
+</div>
+
+<div class="tag-archive">
+  <div class="container">
+    {% assign posts = site.tags[page.tag] %}
+    {% if posts.size > 0 %}
+      <div class="article-list">
+        {% for post in posts %}
+          <article class="article-item">
+            <div class="article-content">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="article-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                {% if post.author %} • {{ post.author }}{% endif %}
+                {% if post.tags %} • {% for tag in post.tags %}{% unless forloop.first %}, {% endunless %}<a href="/tags/{{ tag | slugify }}/" class="tag-link">{{ tag }}</a>{% endfor %}{% endif %}
+              </p>
+              <div class="article-excerpt">
+                {% if post.excerpt %}
+                  {{ post.excerpt | strip_html | truncate: 200 }}
+                {% else %}
+                  {% assign paragraphs = post.content | split: '</p>' %}
+                  {% if paragraphs.size > 0 %}{{ paragraphs[0] | strip_html | truncate: 200 }}{% endif %}
+                {% endif %}
+              </div>
+              <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-articles">
+        <h2>No articles found</h2>
+        <p>There are no articles tagged with "{{ page.tag }}" yet.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.tag-archive {
+  padding: 0 0 3rem 0;
+}
+
+.article-list {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
+.article-item {
+  background: var(--dark-gray);
+  margin-bottom: 2rem;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.article-item:hover {
+  background: var(--dark-gray);
+}
+
+.article-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article-item h2 a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.article-item h2 a:hover {
+  color: var(--burnt-umber);
+}
+
+.article-meta {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.article-excerpt {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.read-more:hover {
+  color: var(--burnt-umber);
+  transition: none;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-gray);
+}
+
+.tag-link {
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.tag-link:hover {
+  color: var(--burnt-umber);
+  transition: none;
+}
+</style>

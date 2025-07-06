@@ -1,113 +1,105 @@
 ---
-layout: default
+layout: minimal
 permalink: /
 ---
 
 <div class="page-lead">
   <div class="container">
-    <p>Verb Noun is a design discipline publication.</p>
+    <p>A design discipline publication</p>
   </div>
 </div>
 
-<div class="articles-archive">
+<div class="newsletter-section">
   <div class="container">
-    {% if site.posts.size > 0 %}
-      <div class="article-list">
-        {% for post in site.posts %}
-          <article class="article-item">
-            <div class="article-content">
-              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-              <p class="article-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-                {% if post.author %} • {{ post.author }}{% endif %}
-                {% if post.tags %} • {{ post.tags | join: ', ' }}{% endif %}
-              </p>
-              <div class="article-excerpt">
-                {% assign paragraphs = post.content | split: '</p>' %}
-                {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
-                {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
-              </div>
-              <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
-            </div>
-          </article>
-        {% endfor %}
-      </div>
-    {% else %}
-      <div class="no-articles">
-        <h2>No articles yet</h2>
-        <p>We're working on bringing you thoughtful design content. Check back soon!</p>
-      </div>
-    {% endif %}
+    <div class="newsletter-box">
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/verbnoun"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://newsletter.verbnoun.com', 'popupwindow')"
+        class="embeddable-buttondown-form">
+        <div class="form-field">
+          <label for="bd-email" class="form-label">Email Address</label>
+          <input type="email" name="email" id="bd-email" required class="newsletter-input">
+        </div>
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </form>
+    </div>
   </div>
 </div>
 
 <style>
-.page-lead {
-  background: var(--dark-gray);
-  padding: 2rem 0;
-  text-align: center;
+
+.newsletter-section {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
 }
 
-.page-lead p {
-  color: var(--text-gray);
-  margin: 0;
+.newsletter-box {
+  background: #222;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
 }
 
-.articles-archive {
-  padding: 3rem 0;
-}
-
-.article-list {
-  max-width: 64ch;
-  margin: 0 auto;
-}
-
-.article-item {
-  background: var(--dark-gray);
+.form-field {
   margin-bottom: 2rem;
-  padding: 0;
-  transition: background-color 0.3s ease;
 }
 
-.article-item:hover {
-  background: var(--dark-gray);
-}
-
-.article-item h2 {
-  margin-bottom: 0.5rem;
-}
-
-.article-item h2 a {
+.form-label {
+  display: block;
   color: var(--text-white);
-  text-decoration: none;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.9em;
 }
 
-.article-item h2 a:hover {
-  color: var(--burnt-umber);
+.newsletter-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #444;
+  background: var(--dark-gray);
+  color: var(--text-white);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
-.article-meta {
-  color: var(--text-gray);
-  margin-bottom: 1rem;
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--burnt-umber);
 }
 
-.article-excerpt {
-  color: var(--text-gray);
-  margin-bottom: 1rem;
-}
-
-.read-more {
-  color: var(--burnt-umber);
-  text-decoration: none;
-}
-
-.read-more:hover {
-  text-decoration: underline;
-}
-
-.no-articles {
-  text-align: center;
-  padding: 3rem 0;
+.newsletter-input::placeholder {
   color: var(--text-gray);
 }
+
+.newsletter-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--burnt-umber);
+  color: var(--text-white);
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background: #7A3A27;
+}
+
+@media (max-width: 480px) {
+  .newsletter-box {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
+
 </style>

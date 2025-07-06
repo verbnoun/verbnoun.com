@@ -3,11 +3,9 @@ layout: post
 title: "設計文明論：階層化された理解の必然性"
 date: 2024-07-06
 author: "編集部"
-tags: design, philosophy, civilization, japanese
+tags: ["design", "philosophy", "civilization", "japanese"]
 excerpt: "設計とは工学を包含する上位概念である。マンハッタン橋とブルックリン橋は共に優れた工学的成果でありながら、その設計哲学は根本的に異なる。愚劣な設計者による粗悪な橋梁は絶えず人命を奪い続けている。"
 ---
-
-# 設計文明論：階層化された理解の必然性
 
 ## 設計の本質的優位性
 

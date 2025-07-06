@@ -1,0 +1,116 @@
+---
+layout: default
+permalink: /articles/
+---
+
+<div class="page-lead">
+  <div class="container">
+    <p>Verb Noun is a design discipline publication.</p>
+  </div>
+</div>
+
+<div class="articles-archive">
+  <div class="container">
+    {% if site.posts.size > 0 %}
+      <div class="article-list">
+        {% for post in site.posts %}
+          <article class="article-item">
+            <div class="article-content">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="article-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                {% if post.author %} • {{ post.author }}{% endif %}
+                {% if post.tags %} • {% for tag in post.tags %}{% unless forloop.first %}, {% endunless %}<a href="/tags/{{ tag | slugify }}/" class="tag-link">{{ tag }}</a>{% endfor %}{% endif %}
+              </p>
+              <div class="article-excerpt">
+                {% assign paragraphs = post.content | split: '</p>' %}
+                {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
+                {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
+              </div>
+              <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-articles">
+        <h2>No articles yet</h2>
+        <p>We're working on bringing you thoughtful design content. Check back soon!</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+
+.articles-archive {
+  padding: 0 0 3rem 0;
+}
+
+.article-list {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
+.article-item {
+  background: var(--dark-gray);
+  margin-bottom: 2rem;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.article-item:hover {
+  background: var(--dark-gray);
+}
+
+.article-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article-item h2 a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.article-item h2 a:hover {
+  color: var(--burnt-umber);
+}
+
+.article-meta {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.tag-link {
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.tag-link:hover {
+  color: var(--burnt-umber);
+  transition: none;
+}
+
+.article-excerpt {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.read-more:hover {
+  color: var(--burnt-umber);
+  transition: none;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-gray);
+}
+</style>

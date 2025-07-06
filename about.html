@@ -6,7 +6,8 @@ permalink: /about/
 
 <div class="page-lead">
   <div class="container">
-    <p>A critical examination of design as cultural practice.</p>
+    <h2>About Verb Noun</h2>
+    <p>A critical examination of design as cultural practice, exploring the intersection of form and meaning in contemporary discourse.</p>
   </div>
 </div>
 
@@ -30,45 +31,65 @@ permalink: /about/
           <li>Reviews of books that matter in our literary landscape</li>
         </ul>
         
-        <h2>Our Community</h2>
-        <p>VerbNoun is more than a magazine—it's a community of readers and writers who believe in the transformative power of language. We foster dialogue, encourage diverse voices, and create space for meaningful literary discourse.</p>
         
-        <p>Whether you're a seasoned writer or an avid reader, we invite you to join our conversation about what it means to live in a world shaped by words.</p>
+        <h3>Get In Touch</h3>
+        <p>Have a story to share? Want to contribute? We'd love to hear from you.</p>
+        <p>Email us at <a href="mailto:contact@verbnoun.com">contact@verbnoun.com</a></p>
         
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p>Have a story to share? Want to contribute? We'd love to hear from you.</p>
-          <p>Email us at <a href="mailto:contact@verbnoun.com">contact@verbnoun.com</a></p>
-        </div>
+        <h2>Contributors</h2>
+          
+          <div class="contributor">
+            <div class="contributor-photo">
+              <img src="https://images.unsplash.com/photo-1701286732006-432405962a00?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dr. Elena Vasquez" />
+              <p class="photo-credit">Photo by <a href="https://unsplash.com/@amirabbaspoor">Amir Abbaspoor</a></p>
+            </div>
+            <div class="contributor-info">
+              <h3>Dr. Elena Vasquez</h3>
+              <p class="title">Contributing Editor & Cultural Critic</p>
+              <p>Dr. Vasquez holds a PhD in Comparative Literature from Columbia University and has written extensively on the intersection of language, power, and cultural identity. Her essays on contemporary media and literary criticism have appeared in The Paris Review, n+1, and Cabinet Magazine. She currently teaches at the New School and serves as cultural editor for several independent publications.</p>
+            </div>
+          </div>
+          
+          <div class="contributor">
+            <div class="contributor-photo">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marcus Klein" />
+              <p class="photo-credit">Photo by <a href="https://unsplash.com/@thoughtcatalog">Thought Catalog</a></p>
+            </div>
+            <div class="contributor-info">
+              <h3>Marcus Klein</h3>
+              <p class="title">Design Philosophy Writer</p>
+              <p>Marcus is a practicing architect and writer whose work explores the philosophical underpinnings of design thinking. His background spans both the Bauhaus tradition and contemporary digital culture, bringing a unique perspective to questions of form, function, and meaning. He has contributed to Architectural Review, Domus, and various design criticism platforms while maintaining his practice in Berlin.</p>
+            </div>
+          </div>
+          
+          <div class="contributor">
+            <div class="contributor-photo">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maya Chen" />
+              <p class="photo-credit">Photo by <a href="https://unsplash.com/@mrsrachelmcdermott">Rachel McDermott</a></p>
+            </div>
+            <div class="contributor-info">
+              <h3>Maya Chen</h3>
+              <p class="title">Aesthetic Theory & Technology Writer</p>
+              <p>Maya brings a background in both computer science and aesthetic theory to her writing on technology and culture. With an MFA from Yale and professional experience in user experience design, she examines how digital interfaces shape human perception and social interaction. Her work has been featured in Real Life Magazine, Logic, and The New Inquiry, focusing on the political implications of design decisions.</p>
+            </div>
+          </div>
         
-        <div class="colophon">
-          <h3>Colophon</h3>
-          <p>Verb Noun is set in Caladea, a serif typeface designed by Carolina Giovagnoli and Andrés Torresi for Huerta Tipográfica. The site is built with Jekyll and hosted on GitHub Pages.</p>
-          <p>The name reflects our belief that language operates through the dynamic relationship between action (verb) and object (noun), movement and substance, process and form.</p>
-        </div>
+        <h3>Colophon</h3>
+        <p>Verb Noun is set in Caladea, a serif typeface designed by Carolina Giovagnoli and Andrés Torresi for Huerta Tipográfica. The site is built with Jekyll and hosted on GitHub Pages.</p>
+        <p>The name reflects our belief that language operates through the dynamic relationship between action (verb) and object (noun), movement and substance, process and form.</p>
       </div>
     </div>
   </div>
 </div>
 
 <style>
-.page-lead {
-  background: var(--dark-gray);
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.page-lead p {
-  color: var(--text-gray);
-  margin: 0;
-}
 
 .about-section {
-  padding: 3rem 0;
+  padding: 0 0 3rem 0;
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 64ch;
   margin: 0 auto;
 }
 
@@ -145,6 +166,95 @@ permalink: /about/
 
 .colophon p {
   color: var(--text-gray);
+}
+
+.contributors-section {
+  background: var(--dark-gray);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.contributors-section h2 {
+  margin-top: 0;
+  color: var(--text-white);
+  margin-bottom: 2rem;
+}
+
+.contributor {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.contributor:last-child {
+  margin-bottom: 0;
+}
+
+.contributor-photo {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.contributor-photo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  vertical-align: top;
+}
+
+.photo-credit {
+  font-size: 0.75rem;
+  color: var(--text-gray);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.photo-credit a {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+
+.photo-credit a:hover {
+  color: var(--burnt-umber);
+}
+
+.contributor-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+  line-height: 1;
+  padding-top: 0;
+}
+
+.contributor-info .title {
+  color: var(--burnt-umber);
+  font-weight: normal;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.contributor-info p {
+  color: var(--text-gray);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .contributor {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .contributor-photo {
+    width: 100px;
+    margin: 0 auto;
+  }
+  
+  .contributor-photo img {
+    height: 125px;
+  }
 }
 
 @media (max-width: 768px) {
