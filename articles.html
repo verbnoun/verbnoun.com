@@ -5,7 +5,14 @@ permalink: /articles/
 
 <div class="page-lead">
   <div class="container">
-    <p>Verb Noun is a design discipline publication.</p>
+    <div class="bilingual-content">
+      <div class="content-column">
+        <p>Verb Noun is a design discipline publication.</p>
+      </div>
+      <div class="content-column">
+        <p>Verb Nounはデザイン学問の出版物です。</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -118,4 +125,27 @@ permalink: /articles/
   padding: 3rem 0;
   color: var(--text-gray);
 }
+/* Bilingual content layout */
+.bilingual-content {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.content-column {
+  flex: 1;
+  max-width: 64ch;
+}
+
+@media (max-width: 768px) {
+  .bilingual-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .content-column {
+    max-width: none;
+  }
+}
+
 </style>
