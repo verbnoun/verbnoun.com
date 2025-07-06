@@ -295,10 +295,10 @@ li {
 }
 
 /* Responsive typography for apparent size consistency */
-/* Mobile: 16px base (optimal for mobile reading) */
+/* Mobile: 18px base */
 @media (max-width: 480px) {
   body {
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .container {
