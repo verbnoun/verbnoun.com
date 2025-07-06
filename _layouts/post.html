@@ -1,0 +1,149 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="container">
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.author %} • {{ page.author }}{% endif %}
+        {% if page.tags %} • {{ page.tags | join: ', ' }}{% endif %}
+      </div>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags %}
+      <footer class="post-footer">
+        <div class="post-tags">
+          <span class="tags-label">Tagged:</span>
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </footer>
+    {% endif %}
+  </div>
+</article>
+
+<div class="newsletter-cta">
+  <div class="container">
+    <h2>Stay Connected</h2>
+    <p>Get our latest articles delivered to your inbox.</p>
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/verbnoun"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.email/verbnoun', 'popupwindow')"
+      class="embeddable-buttondown-form">
+      <div class="newsletter-form">
+        <input type="email" name="email" placeholder="Your email address" required class="newsletter-input">
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam, just thoughtful writing.</p>
+    </form>
+  </div>
+</div>
+
+<style>
+.post {
+  padding: 3rem 0;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.post-header h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.post-content {
+  max-width: 66ch;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.post-content h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #2c3e50;
+}
+
+.post-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: #2c3e50;
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
+  color: #1a1a1a;
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tags-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.tag {
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.newsletter-cta {
+  background: #f8f9fa;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.newsletter-cta h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.newsletter-cta p {
+  margin-bottom: 0;
+}
+</style>

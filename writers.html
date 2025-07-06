@@ -1,0 +1,139 @@
+---
+layout: default
+title: Writers
+permalink: /writers/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Writers</h1>
+    <p>Meet the voices behind VerbNoun</p>
+  </div>
+</div>
+
+<div class="writers-section">
+  <div class="container">
+    {% if site.writers.size > 0 %}
+      <div class="writers-grid">
+        {% for writer in site.writers %}
+          <div class="writer-card">
+            {% if writer.image %}
+              <img src="{{ writer.image | relative_url }}" alt="{{ writer.name }}" class="writer-image">
+            {% endif %}
+            <div class="writer-info">
+              <h2><a href="{{ writer.url | relative_url }}">{{ writer.name | default: writer.title }}</a></h2>
+              {% if writer.bio %}
+                <p class="writer-bio">{{ writer.bio | truncate: 150 }}</p>
+              {% endif %}
+              {% if writer.social %}
+                <div class="writer-social">
+                  {% if writer.social.twitter %}
+                    <a href="https://twitter.com/{{ writer.social.twitter }}">Twitter</a>
+                  {% endif %}
+                  {% if writer.social.website %}
+                    <a href="{{ writer.social.website }}">Website</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-writers">
+        <h2>Writer profiles coming soon</h2>
+        <p>We're building a community of thoughtful writers. Check back soon to meet our contributors!</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.writers-section {
+  padding: 3rem 0;
+}
+
+.writers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.writer-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.writer-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.writer-info h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.writer-info h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.writer-info h2 a:hover {
+  color: #667eea;
+}
+
+.writer-bio {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.writer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.writer-social a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.writer-social a:hover {
+  text-decoration: underline;
+}
+
+.no-writers {
+  text-align: center;
+  padding: 3rem 0;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .writers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

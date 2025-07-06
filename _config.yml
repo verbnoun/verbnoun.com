@@ -1,0 +1,51 @@
+title: VerbNoun
+description: A literary magazine exploring the intersection of words and meaning
+url: "https://verbnoun.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Pagination
+paginate: 5
+paginate_path: "/articles/page:num/"
+
+# Collections
+collections:
+  writers:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: ""
+  - scope:
+      path: ""
+      type: "writers"
+    values:
+      layout: "writer"
+
+# Social
+twitter_username: verbnoun
+github_username: verbnoun
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

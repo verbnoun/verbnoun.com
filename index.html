@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+  <div class="container">
+    <h1 class="site-title">{{ site.title }}</h1>
+    <p class="site-description">{{ site.description }}</p>
+    
+    <nav class="main-nav">
+      <a href="/articles/" class="nav-link">Articles</a>
+      <a href="/writers/" class="nav-link">Writers</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+  </div>
+</div>
+
+<div class="newsletter-section">
+  <div class="container">
+    <h2>Stay Connected</h2>
+    <p>Get our latest articles and literary insights delivered to your inbox.</p>
+    <!-- Buttondown newsletter signup will be integrated here -->
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/verbnoun"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.email/verbnoun', 'popupwindow')"
+      class="embeddable-buttondown-form">
+      <div class="newsletter-form">
+        <input type="email" name="email" placeholder="Your email address" required class="newsletter-input">
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam, just thoughtful writing delivered to your inbox.</p>
+    </form>
+  </div>
+</div>
+
+<div class="recent-articles">
+  <div class="container">
+    <h2>Recent Articles</h2>
+    {% if site.posts.size > 0 %}
+      <div class="article-grid">
+        {% for post in site.posts limit:3 %}
+          <article class="article-card">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="article-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+              {% if post.author %} • {{ post.author }}{% endif %}
+            </p>
+            <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="view-all"><a href="/articles/">View all articles →</a></p>
+    {% else %}
+      <p>No articles yet. Check back soon for our latest literary explorations.</p>
+    {% endif %}
+  </div>
+</div>
