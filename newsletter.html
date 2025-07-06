@@ -1,0 +1,93 @@
+---
+layout: default
+title: Newsletter
+permalink: /newsletter/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Newsletter</h1>
+  </div>
+</div>
+
+<div class="newsletter-section">
+  <div class="container">
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/verbnoun"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://newsletter.verbnoun.com', 'popupwindow')"
+      class="embeddable-buttondown-form">
+      <div class="newsletter-form">
+        <input type="email" name="email" id="bd-email" placeholder="Your email address" required class="newsletter-input">
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+.page-header {
+  background: var(--dark-gray);
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.page-header h1 {
+  color: var(--text-white);
+}
+
+.newsletter-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #222;
+  color: var(--text-white);
+  font-family: inherit;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--burnt-umber);
+}
+
+.newsletter-button {
+  padding: 1rem 1.5rem;
+  background: var(--burnt-umber);
+  color: var(--text-white);
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background: #7A3A27;
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  .newsletter-button {
+    padding: 1rem;
+  }
+}
+</style>

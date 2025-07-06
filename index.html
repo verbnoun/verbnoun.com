@@ -4,34 +4,14 @@ layout: default
 
 <div class="hero-section">
   <div class="container">
-    <h1 class="site-title">{{ site.title }}</h1>
-    <p class="site-description">{{ site.description }}</p>
+    <h1><span>Verb</span> <span class="slash">/</span> <span>Noun</span></h1>
     
     <nav class="main-nav">
       <a href="/articles/" class="nav-link">Articles</a>
       <a href="/writers/" class="nav-link">Writers</a>
       <a href="/about/" class="nav-link">About</a>
+      <a href="/newsletter/" class="nav-link">Newsletter</a>
     </nav>
-  </div>
-</div>
-
-<div class="newsletter-section">
-  <div class="container">
-    <h2>Stay Connected</h2>
-    <p>Get our latest articles and literary insights delivered to your inbox.</p>
-    <!-- Buttondown newsletter signup will be integrated here -->
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/verbnoun"
-      method="post"
-      target="popupwindow"
-      onsubmit="window.open('https://newsletter.verbnoun.com', 'popupwindow')"
-      class="embeddable-buttondown-form">
-      <div class="newsletter-form">
-        <input type="email" name="email" id="bd-email" placeholder="Your email address" required class="newsletter-input">
-        <button type="submit" class="newsletter-button">Subscribe</button>
-      </div>
-      <p class="newsletter-note">No spam, just thoughtful writing delivered to your inbox.</p>
-    </form>
   </div>
 </div>
 
@@ -47,7 +27,11 @@ layout: default
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
               {% if post.author %} • {{ post.author }}{% endif %}
             </p>
-            <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+            <div class="article-excerpt">
+              {% assign paragraphs = post.content | split: '</p>' %}
+              {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
+              {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
+            </div>
           </article>
         {% endfor %}
       </div>
