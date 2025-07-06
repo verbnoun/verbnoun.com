@@ -296,7 +296,7 @@ li {
 
 /* Responsive typography for apparent size consistency */
 /* Mobile: 18px base */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   body {
     font-size: 20px;
   }
@@ -354,7 +354,7 @@ li {
 }
 
 /* Tablet: 16px base (medium viewing distance) - default above */
-@media (min-width: 481px) and (max-width: 1199px) {
+@media (min-width: 501px) and (max-width: 1199px) {
   body {
     font-size: 16px;
   }
