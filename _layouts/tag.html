@@ -37,12 +37,9 @@ layout: default
                 {% if post.tags %} • {% for tag in post.tags %}{% unless forloop.first %}, {% endunless %}<a href="/tags/{{ tag | slugify }}/" class="tag-link">{{ tag }}</a>{% endfor %}{% endif %}
               </p>
               <div class="article-excerpt">
-                {% if post.excerpt %}
-                  {{ post.excerpt | strip_html | truncate: 200 }}
-                {% else %}
-                  {% assign paragraphs = post.content | split: '</p>' %}
-                  {% if paragraphs.size > 0 %}{{ paragraphs[0] | strip_html | truncate: 200 }}{% endif %}
-                {% endif %}
+                {% assign paragraphs = post.content | split: '</p>' %}
+                {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
+                {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
               </div>
               <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
             </div>
@@ -73,6 +70,11 @@ layout: default
   margin-bottom: 2rem;
   padding: 0;
   transition: background-color 0.3s ease;
+}
+
+.article-content {
+  width: 100%;
+  max-width: none;
 }
 
 .article-item:hover {

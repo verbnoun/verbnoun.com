@@ -61,7 +61,6 @@ permalink: /newsletter/
   font-family: inherit;
   margin-bottom: 0.5rem;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   font-size: 0.9em;
 }
 
@@ -83,6 +82,14 @@ permalink: /newsletter/
 
 .newsletter-input::placeholder {
   color: var(--text-gray);
+}
+
+.newsletter-input:-webkit-autofill,
+.newsletter-input:-webkit-autofill:hover,
+.newsletter-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-gray) inset !important;
+  -webkit-text-fill-color: var(--text-white) !important;
+  border: 1px solid #444 !important;
 }
 
 .newsletter-button {

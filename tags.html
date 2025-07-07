@@ -1,0 +1,118 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<div class="page-lead">
+  <div class="container">
+    <h2>Tags</h2>
+    <p>Explore articles by topic. Each tag represents a thematic collection of our editorial work.</p>
+  </div>
+</div>
+
+<div class="tags-index">
+  <div class="container">
+    <div class="tags-grid">
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        <div class="tag-card">
+          <h3><a href="/tags/{{ tag_name | slugify }}/">{{ tag_name | capitalize }}</a></h3>
+          <p class="tag-description">
+            {% case tag_name %}
+              {% when 'design' %}Exploring form, function, and aesthetic philosophy
+              {% when 'technology' %}Examining tools, interfaces, and digital culture
+              {% when 'philosophy' %}Critical thinking on ideas and meaning
+              {% when 'psychology' %}Understanding behavior and mental processes
+              {% when 'aesthetics' %}Beauty, taste, and sensory experience
+              {% when 'culture' %}Society, values, and shared human experience
+              {% when 'civilization' %}Human organization and cultural development
+              {% when 'social-media' %}Digital platforms and online interaction
+              {% when 'japanese' %}Japanese design philosophy and cultural perspectives
+              {% when 'editorial' %}Perspectives from the editorial team
+              {% when 'introduction' %}Foundational concepts and welcome pieces
+              {% else %}Articles exploring {{ tag_name }} in depth
+            {% endcase %}
+          </p>
+          <p class="tag-count">{{ tag_posts | size }} {% if tag_posts.size == 1 %}article{% else %}articles{% endif %}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.tags-index {
+  padding: 0 0 3rem 0;
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tag-card {
+  background: var(--dark-gray);
+  border: 1px solid #333;
+  padding: 2rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.tag-card:hover {
+  border-color: var(--burnt-umber);
+  background: #1a1a1a;
+}
+
+.tag-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.tag-card h3 a {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.tag-card h3 a:hover {
+  color: var(--burnt-umber);
+}
+
+.tag-description {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.tag-count {
+  color: var(--text-gray);
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .tags-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tag-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tags-grid {
+    gap: 1rem;
+  }
+  
+  .tag-card {
+    padding: 1rem;
+  }
+}
+</style>
