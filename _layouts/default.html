@@ -39,6 +39,11 @@
     <div class="container">
       <div class="header-content">
         <a class="site-title" href="{{ '/' | relative_url }}">Verb <span class="slash">/</span> Noun</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
         <nav class="header-nav">
           <a href="/about/" class="nav-item">About</a>
           <a href="/tags/" class="nav-item">Tags</a>
@@ -56,6 +61,24 @@
           </div>
         </nav>
       </div>
+    </div>
+    <div class="mobile-nav-overlay">
+      <nav class="mobile-nav">
+        <a href="/about/" class="mobile-nav-item">About</a>
+        <a href="/tags/" class="mobile-nav-item">Tags</a>
+        <a href="/newsletter/" class="mobile-nav-item">Subscription</a>
+        <div class="theme-picker mobile-nav-item">
+          <div class="theme-option" data-theme="light">
+            <span class="theme-emoji">☼</span>
+          </div>
+          <div class="theme-option" data-theme="auto">
+            <span class="theme-emoji">🝰&#xFE0E;</span>
+          </div>
+          <div class="theme-option" data-theme="dark">
+            <span class="theme-emoji">☽</span>
+          </div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -161,6 +184,26 @@
       
       // Initialize on page load
       initTheme();
+    })();
+
+    // Mobile menu functionality
+    (function() {
+      const mobileToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+      
+      if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener('click', function() {
+          mobileOverlay.classList.toggle('open');
+        });
+        
+        // Close menu when clicking nav items
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        mobileNavItems.forEach(item => {
+          item.addEventListener('click', function() {
+            mobileOverlay.classList.remove('open');
+          });
+        });
+      }
     })();
   </script>
 </body>
