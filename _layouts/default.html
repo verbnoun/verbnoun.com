@@ -38,16 +38,34 @@
   <header class="site-header">
     <div class="container">
       <div class="header-content">
-        <a class="site-title" href="{{ '/' | relative_url }}">Verb <span class="slash">/</span> Noun</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
+        <nav class="mobile-nav">
+          <a href="/about/" class="mobile-nav-item{% if page.url == '/about/' %} active{% endif %}">About</a>
+          <a href="/tags/" class="mobile-nav-item{% if page.url == '/tags/' %} active{% endif %}">Tags</a>
+          <a href="/newsletter/" class="mobile-nav-item{% if page.url == '/newsletter/' %} active{% endif %}">Subscription</a>
+          <div class="theme-picker mobile-nav-item">
+            <div class="theme-option" data-theme="light">
+              <span class="theme-emoji">☼</span>
+            </div>
+            <div class="theme-option" data-theme="auto">
+              <span class="theme-emoji">🝰&#xFE0E;</span>
+            </div>
+            <div class="theme-option" data-theme="dark">
+              <span class="theme-emoji">☽</span>
+            </div>
+          </div>
+        </nav>
+        <div class="header-bottom">
+          <a class="site-title" href="{{ '/' | relative_url }}">Verb <span class="slash">/</span> Noun</a>
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
         <nav class="header-nav">
-          <a href="/about/" class="nav-item">About</a>
-          <a href="/tags/" class="nav-item">Tags</a>
-          <a href="/newsletter/" class="nav-item">Subscription</a>
+          <a href="/about/" class="nav-item{% if page.url == '/about/' %} active{% endif %}">About</a>
+          <a href="/tags/" class="nav-item{% if page.url == '/tags/' %} active{% endif %}">Tags</a>
+          <a href="/newsletter/" class="nav-item{% if page.url == '/newsletter/' %} active{% endif %}">Subscription</a>
           <div class="theme-picker nav-item">
             <div class="theme-option" data-theme="light">
               <span class="theme-emoji">☼</span>
@@ -61,24 +79,6 @@
           </div>
         </nav>
       </div>
-    </div>
-    <div class="mobile-nav-overlay">
-      <nav class="mobile-nav">
-        <a href="/about/" class="mobile-nav-item">About</a>
-        <a href="/tags/" class="mobile-nav-item">Tags</a>
-        <a href="/newsletter/" class="mobile-nav-item">Subscription</a>
-        <div class="theme-picker mobile-nav-item">
-          <div class="theme-option" data-theme="light">
-            <span class="theme-emoji">☼</span>
-          </div>
-          <div class="theme-option" data-theme="auto">
-            <span class="theme-emoji">🝰&#xFE0E;</span>
-          </div>
-          <div class="theme-option" data-theme="dark">
-            <span class="theme-emoji">☽</span>
-          </div>
-        </div>
-      </nav>
     </div>
   </header>
 
@@ -96,9 +96,9 @@
     <div class="container">
       <p>Endeavour is Design</p>
       <nav class="footer-nav">
-        <a href="/about/" class="nav-item">About</a>
-        <a href="/tags/" class="nav-item">Tags</a>
-        <a href="/newsletter/" class="nav-item">Subscription</a>
+        <a href="/about/" class="nav-item{% if page.url == '/about/' %} active{% endif %}">About</a>
+        <a href="/tags/" class="nav-item{% if page.url == '/tags/' %} active{% endif %}">Tags</a>
+        <a href="/newsletter/" class="nav-item{% if page.url == '/newsletter/' %} active{% endif %}">Subscription</a>
         <div class="theme-picker nav-item">
           <div class="theme-option" data-theme="light">
             <span class="theme-emoji">☼</span>
@@ -189,18 +189,18 @@
     // Mobile menu functionality
     (function() {
       const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+      const siteHeader = document.querySelector('.site-header');
       
-      if (mobileToggle && mobileOverlay) {
+      if (mobileToggle && siteHeader) {
         mobileToggle.addEventListener('click', function() {
-          mobileOverlay.classList.toggle('open');
+          siteHeader.classList.toggle('open');
         });
         
         // Close menu when clicking nav items
         const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
         mobileNavItems.forEach(item => {
           item.addEventListener('click', function() {
-            mobileOverlay.classList.remove('open');
+            siteHeader.classList.remove('open');
           });
         });
       }
