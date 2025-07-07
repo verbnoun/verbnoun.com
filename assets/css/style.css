@@ -264,33 +264,77 @@ li {
   padding: 0 1.5rem;
 }
 
-/* Header */
+/* Header - following liquid glass tutorial structure */
 .site-header {
-  /* Fallback for older browsers */
-  background: var(--bg-primary);
-  
-  /* Modern backdrop blur for supported browsers */
-  background: rgba(19, 19, 19, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 3rem 0 1rem 0;
+  /* Remove background - will be handled by liquid glass layers */
 }
 
-/* Light theme header */
-[data-theme="light"] .site-header {
-  background: var(--bg-primary);
-  background: rgba(253, 249, 243, 0.5);
+/* Liquid glass filter layer */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: url(#lg-dist);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Auto theme header follows system preference */
-@media (prefers-color-scheme: light) {
-  [data-theme="auto"] .site-header {
+/* Glass overlay layer */
+.site-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(19, 19, 19, 0.3);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Content layer - above all glass effects */
+.site-header > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Feature detection and fallback */
+@supports not (filter: url(#lg-dist)) {
+  .site-header {
+    background: var(--bg-primary);
+    background: rgba(19, 19, 19, 0.5);
+  }
+  
+  [data-theme="light"] .site-header {
     background: var(--bg-primary);
     background: rgba(253, 249, 243, 0.5);
+  }
+  
+  @media (prefers-color-scheme: light) {
+    [data-theme="auto"] .site-header {
+      background: var(--bg-primary);
+      background: rgba(253, 249, 243, 0.5);
+    }
+  }
+}
+
+/* Light theme glass adjustments */
+[data-theme="light"] .site-header::after {
+  background: rgba(253, 249, 243, 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme="auto"] .site-header::after {
+    background: rgba(253, 249, 243, 0.3);
   }
 }
 
@@ -398,13 +442,13 @@ li {
     /* Fallback for older browsers */
     background: var(--bg-primary);
     
-    /* Modern backdrop blur matching desktop */
+    /* Semi-transparent base matching desktop */
     background: rgba(19, 19, 19, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     
     transition: transform 0.3s linear;
   }
+  
+  /* Mobile liquid glass effect inherits from desktop */
   
   [data-theme="light"] .site-header {
     background: var(--bg-primary);
@@ -417,6 +461,8 @@ li {
       background: rgba(253, 249, 243, 0.5);
     }
   }
+  
+  /* Mobile light theme liquid glass inherits from desktop */
   
   .site-header.open {
     transform: translateY(0);
