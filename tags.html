@@ -45,32 +45,25 @@ permalink: /tags/
 
 <style>
 .tags-index {
-  padding: 0 0 3rem 0;
+  padding: 4rem 0 3rem 0;
 }
 
 .tags-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 4rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .tag-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 2rem;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.tag-card:hover {
-  border-color: var(--accent-color);
-  background: var(--bg-secondary);
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
 .tag-card h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .tag-card h3 a {
@@ -85,8 +78,8 @@ permalink: /tags/
 
 .tag-description {
   color: var(--text-secondary);
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .tag-count {
@@ -98,21 +91,21 @@ permalink: /tags/
 @media (max-width: 768px) {
   .tags-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
-  .tag-card {
-    padding: 1.5rem;
+  .tags-index {
+    padding: 3rem 0;
   }
 }
 
 @media (max-width: 480px) {
   .tags-grid {
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
-  .tag-card {
-    padding: 1rem;
+  .tags-index {
+    padding: 2rem 0;
   }
 }
 </style>

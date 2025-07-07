@@ -36,10 +36,26 @@ permalink: /newsletter/
   </div>
 </div>
 
+<div class="rss-section">
+  <div class="container">
+    <div class="rss-box">
+      <h3>RSS Feed</h3>
+      <p>Prefer RSS? Subscribe to our feed for updates in your favorite RSS reader.</p>
+      <a href="/feed.xml" class="rss-button">RSS Feed</a>
+    </div>
+  </div>
+</div>
+
 <style>
 
 .newsletter-section {
   padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.rss-section {
+  padding: 2rem 0 4rem 0;
   display: flex;
   justify-content: center;
 }
@@ -49,6 +65,27 @@ permalink: /newsletter/
   padding: 3rem;
   max-width: 500px;
   width: 100%;
+}
+
+.rss-box {
+  background: var(--bg-secondary);
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.rss-box h3 {
+  color: var(--text-primary);
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.rss-box p {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  line-height: 1.4;
 }
 
 .form-field {
@@ -109,8 +146,30 @@ permalink: /newsletter/
   background: var(--brick-red-light);
 }
 
+.rss-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rss-button:hover {
+  background: var(--brick-red-light);
+}
+
 @media (max-width: 480px) {
   .newsletter-box {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+  
+  .rss-box {
     padding: 2rem;
     margin: 0 1rem;
   }
