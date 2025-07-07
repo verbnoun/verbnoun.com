@@ -57,15 +57,15 @@ permalink: /tags/
 }
 
 .tag-card {
-  background: var(--dark-gray);
-  border: 1px solid #333;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   padding: 2rem;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .tag-card:hover {
-  border-color: var(--burnt-umber);
-  background: #1a1a1a;
+  border-color: var(--accent-color);
+  background: var(--bg-secondary);
 }
 
 .tag-card h3 {
@@ -74,23 +74,23 @@ permalink: /tags/
 }
 
 .tag-card h3 a {
-  color: var(--text-white);
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .tag-card h3 a:hover {
-  color: var(--burnt-umber);
+  color: var(--accent-color);
 }
 
 .tag-description {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   line-height: 1.5;
 }
 
 .tag-count {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: 0.9em;
   margin-bottom: 0;
 }

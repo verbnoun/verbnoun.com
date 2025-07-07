@@ -4,9 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#810909">
+  <meta name="msapplication-TileColor" content="#810909">
   
   <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon_io/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon_io/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon_io/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/favicon_io/site.webmanifest' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/favicon_io/favicon.ico' | relative_url }}">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +25,14 @@
   
   {% seo %}
   {% feed_meta %}
+  
+  <script>
+    // Prevent flash of unstyled content by applying theme before page renders
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'auto';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -51,8 +68,89 @@
         <a href="/tags/">Tags</a>
         <a href="/newsletter/">Subscription</a>
       </nav>
+      <div class="theme-picker">
+        <div class="theme-option" data-theme="light">
+          <span class="theme-emoji">☼</span>
+        </div>
+        <div class="theme-option" data-theme="auto">
+          <span class="theme-emoji">🝰</span>
+        </div>
+        <div class="theme-option" data-theme="dark">
+          <span class="theme-emoji">☽</span>
+        </div>
+      </div>
       <p>&copy; Verb Noun</p>
     </div>
   </footer>
+
+  <script>
+    // Theme management
+    (function() {
+      const themePicker = document.querySelector('.theme-picker');
+      const themeOptions = document.querySelectorAll('.theme-option');
+      const html = document.documentElement;
+      
+      // Get saved theme or default to 'auto'
+      function getSavedTheme() {
+        return localStorage.getItem('theme') || 'auto';
+      }
+      
+      // Save theme preference
+      function saveTheme(theme) {
+        localStorage.setItem('theme', theme);
+      }
+      
+      // Apply theme to document
+      function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+      }
+      
+      // Get system preference
+      function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      
+      // Update UI to reflect current theme
+      function updateThemeUI(theme) {
+        // Update picker visual state
+        themePicker.setAttribute('data-selected', theme);
+      }
+      
+      // Set theme and update UI
+      function setTheme(theme) {
+        applyTheme(theme);
+        updateThemeUI(theme);
+        saveTheme(theme);
+      }
+      
+      // Initialize theme
+      function initTheme() {
+        const savedTheme = getSavedTheme();
+        setTheme(savedTheme);
+      }
+      
+      // Handle theme option clicks
+      themeOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+          e.preventDefault();
+          const selectedTheme = this.getAttribute('data-theme');
+          setTheme(selectedTheme);
+        });
+        
+      });
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function() {
+        const currentTheme = getSavedTheme();
+        if (currentTheme === 'auto') {
+          // Re-apply auto theme to pick up system change
+          applyTheme('auto');
+        }
+      });
+      
+      // Initialize on page load
+      initTheme();
+    })();
+  </script>
 </body>
 </html>

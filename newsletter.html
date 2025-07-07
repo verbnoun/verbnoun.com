@@ -45,7 +45,7 @@ permalink: /newsletter/
 }
 
 .newsletter-box {
-  background: #222;
+  background: var(--bg-secondary);
   padding: 3rem;
   max-width: 500px;
   width: 100%;
@@ -57,7 +57,7 @@ permalink: /newsletter/
 
 .form-label {
   display: block;
-  color: var(--text-white);
+  color: var(--text-primary);
   font-family: inherit;
   margin-bottom: 0.5rem;
   letter-spacing: 0.05em;
@@ -67,9 +67,9 @@ permalink: /newsletter/
 .newsletter-input {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #444;
-  background: var(--dark-gray);
-  color: var(--text-white);
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
   transition: border-color 0.3s ease;
@@ -77,26 +77,26 @@ permalink: /newsletter/
 
 .newsletter-input:focus {
   outline: none;
-  border-color: var(--burnt-umber);
+  border-color: var(--accent-color);
 }
 
 .newsletter-input::placeholder {
-  color: var(--text-gray);
+  color: var(--text-secondary);
 }
 
 .newsletter-input:-webkit-autofill,
 .newsletter-input:-webkit-autofill:hover,
 .newsletter-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px var(--dark-gray) inset !important;
-  -webkit-text-fill-color: var(--text-white) !important;
-  border: 1px solid #444 !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-primary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .newsletter-button {
   width: 100%;
   padding: 1rem 2rem;
-  background: var(--burnt-umber);
-  color: var(--text-white);
+  background: var(--accent-color);
+  color: var(--text-primary);
   border: none;
   font-family: inherit;
   font-size: 1rem;
@@ -106,7 +106,7 @@ permalink: /newsletter/
 }
 
 .newsletter-button:hover {
-  background: #7A3A27;
+  background: var(--brick-red-light);
 }
 
 @media (max-width: 480px) {
