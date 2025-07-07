@@ -40,11 +40,20 @@
       <div class="header-content">
         <a class="site-title" href="{{ '/' | relative_url }}">Verb <span class="slash">/</span> Noun</a>
         <nav class="header-nav">
-          <a href="/about/">About</a>
-          <span class="nav-separator">/</span>
-          <a href="/tags/">Tags</a>
-          <span class="nav-separator">/</span>
-          <a href="/newsletter/">Subscription</a>
+          <a href="/about/" class="nav-item">About</a>
+          <a href="/tags/" class="nav-item">Tags</a>
+          <a href="/newsletter/" class="nav-item">Subscription</a>
+          <div class="theme-picker nav-item">
+            <div class="theme-option" data-theme="light">
+              <span class="theme-emoji">☼</span>
+            </div>
+            <div class="theme-option" data-theme="auto">
+              <span class="theme-emoji">🝰&#xFE0E;</span>
+            </div>
+            <div class="theme-option" data-theme="dark">
+              <span class="theme-emoji">☽</span>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
@@ -64,21 +73,21 @@
     <div class="container">
       <p>Endeavour is Design</p>
       <nav class="footer-nav">
-        <a href="/about/">About</a>
-        <a href="/tags/">Tags</a>
-        <a href="/newsletter/">Subscription</a>
+        <a href="/about/" class="nav-item">About</a>
+        <a href="/tags/" class="nav-item">Tags</a>
+        <a href="/newsletter/" class="nav-item">Subscription</a>
+        <div class="theme-picker nav-item">
+          <div class="theme-option" data-theme="light">
+            <span class="theme-emoji">☼</span>
+          </div>
+          <div class="theme-option" data-theme="auto">
+            <span class="theme-emoji">🝰&#xFE0E;</span>
+          </div>
+          <div class="theme-option" data-theme="dark">
+            <span class="theme-emoji">☽</span>
+          </div>
+        </div>
       </nav>
-      <div class="theme-picker">
-        <div class="theme-option" data-theme="light">
-          <span class="theme-emoji">☼</span>
-        </div>
-        <div class="theme-option" data-theme="auto">
-          <span class="theme-emoji">🝰</span>
-        </div>
-        <div class="theme-option" data-theme="dark">
-          <span class="theme-emoji">☽</span>
-        </div>
-      </div>
       <p>&copy; Verb Noun</p>
     </div>
   </footer>
@@ -86,7 +95,7 @@
   <script>
     // Theme management
     (function() {
-      const themePicker = document.querySelector('.theme-picker');
+      const themePickers = document.querySelectorAll('.theme-picker');
       const themeOptions = document.querySelectorAll('.theme-option');
       const html = document.documentElement;
       
@@ -112,8 +121,10 @@
       
       // Update UI to reflect current theme
       function updateThemeUI(theme) {
-        // Update picker visual state
-        themePicker.setAttribute('data-selected', theme);
+        // Update all picker visual states
+        themePickers.forEach(picker => {
+          picker.setAttribute('data-selected', theme);
+        });
       }
       
       // Set theme and update UI

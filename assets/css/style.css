@@ -70,37 +70,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Font weight adjustments for light theme optical balance */
-[data-theme="light"] body,
-[data-theme="light"] h1,
-[data-theme="light"] h2,
-[data-theme="light"] h3,
-[data-theme="light"] h4,
-[data-theme="light"] h5,
-[data-theme="light"] h6,
-[data-theme="light"] p,
-[data-theme="light"] .article-content,
-[data-theme="light"] .theme-toggle,
-[data-theme="light"] .newsletter-input,
-[data-theme="light"] .newsletter-button {
-  font-weight: 500;
-}
-
-@media (prefers-color-scheme: light) {
-  [data-theme="auto"] body,
-  [data-theme="auto"] h1,
-  [data-theme="auto"] h2,
-  [data-theme="auto"] h3,
-  [data-theme="auto"] h4,
-  [data-theme="auto"] h5,
-  [data-theme="auto"] h6,
-  [data-theme="auto"] p,
-  [data-theme="auto"] .article-content,
-  [data-theme="auto"] .theme-toggle,
-  [data-theme="auto"] .newsletter-input,
-  [data-theme="auto"] .newsletter-button {
-    font-weight: 500;
-  }
+/* Consistent font weight across all themes */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.article-content,
+.theme-toggle,
+.newsletter-input,
+.newsletter-button {
+  font-weight: 400;
 }
 
 /* Typography scale following Bringhurst principles */
@@ -302,16 +285,13 @@ li {
 
 .header-nav {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.header-nav a {
+.header-nav .nav-item {
   margin: 0;
-}
-
-.nav-separator {
-  color: var(--text-secondary);
-  margin: 0 1rem;
 }
 
 /* Hero section */
@@ -418,7 +398,8 @@ li {
 .site-footer {
   background: var(--bg-primary);
   color: var(--text-secondary);
-  padding: 0.5rem 0 4rem;
+  margin: 0.5rem 0 4rem;
+  padding: 0;
 }
 
 .site-footer .container {
@@ -438,6 +419,10 @@ li {
   margin: 2rem 0;
 }
 
+.footer-nav .nav-item {
+  margin: 0;
+}
+
 /* Screen reader only content */
 .sr-only {
   position: absolute;
@@ -455,10 +440,18 @@ li {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
-  margin: 1rem auto;
+  margin: 0;
   width: fit-content;
+}
+
+.theme-option[data-theme="light"] {
+  margin-right: 0.3rem;
+}
+
+.theme-option[data-theme="auto"] {
+  margin-right: -0.05rem;
 }
 
 .theme-option {
@@ -466,8 +459,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -477,7 +470,7 @@ li {
 
 
 .theme-emoji {
-  font-size: 1.8rem;
+  font-size: 1.44rem;
   line-height: 1;
   user-select: none;
   color: var(--theme-icon-muted) !important;
