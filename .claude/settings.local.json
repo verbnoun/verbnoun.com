@@ -8,7 +8,8 @@
       "mcp__playwright__browser_click",
       "mcp__playwright__browser_navigate_back",
       "mcp__playwright__browser_take_screenshot",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "mcp__playwright__browser_resize"
     ],
     "deny": []
   },

@@ -6,10 +6,17 @@ permalink: /tags/
 
 <div class="page-lead">
   <div class="container">
-    <h2>Tags</h2>
-    <p>Explore articles by topic. Each tag represents a thematic collection of our editorial work.</p>
+    <div class="bilingual-content">
+      <div class="content-column">
+        <p>Explore articles by topic. Each tag represents a thematic collection of our editorial work.</p>
+      </div>
+      <div class="content-column">
+        <p>トピック別に記事を探索してください。各タグは編集作業のテーマ別コレクションを表します。</p>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <div class="tags-index">
   <div class="container">
@@ -44,6 +51,7 @@ permalink: /tags/
 </div>
 
 <style>
+
 .tags-index {
   padding: 4rem 0 3rem 0;
 }
@@ -51,7 +59,7 @@ permalink: /tags/
 .tags-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem 4rem;
+  gap: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -106,6 +114,50 @@ permalink: /tags/
   
   .tags-index {
     padding: 2rem 0;
+  }
+}
+
+/* Bilingual content layout - mobile first */
+/* MOBILE DEFAULT - Single column with line break */
+.bilingual-content {
+  /* Natural block flow */
+}
+
+.content-column {
+  margin-bottom: 1.5rem;
+}
+
+.content-column:first-child {
+  margin-bottom: 2rem;
+}
+
+.content-column:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET - Two column layout */
+@media (min-width: 769px) {
+  .bilingual-content {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .content-column {
+    flex: 1;
+    max-width: 64ch;
+    margin-bottom: 0;
+  }
+  
+  .content-column:first-child {
+    margin-bottom: 0;
+  }
+}
+
+/* DESKTOP - Refined two column */
+@media (min-width: 1200px) {
+  .content-column {
+    max-width: 60ch;
   }
 }
 </style>

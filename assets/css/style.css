@@ -264,79 +264,17 @@ li {
   padding: 0 1.5rem;
 }
 
-/* Header - following liquid glass tutorial structure */
+/* Header */
 .site-header {
-  position: sticky;
-  top: 0;
   z-index: 100;
   padding: 3rem 0 1rem 0;
-  /* Remove background - will be handled by liquid glass layers */
+  background: var(--bg-primary);
 }
 
-/* Liquid glass filter layer */
-.site-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: url(#lg-dist);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  pointer-events: none;
-  z-index: 1;
-}
 
-/* Glass overlay layer */
-.site-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(19, 19, 19, 0.3);
-  pointer-events: none;
-  z-index: 2;
-}
 
-/* Content layer - above all glass effects */
-.site-header > * {
-  position: relative;
-  z-index: 3;
-}
 
-/* Feature detection and fallback */
-@supports not (filter: url(#lg-dist)) {
-  .site-header {
-    background: var(--bg-primary);
-    background: rgba(19, 19, 19, 0.5);
-  }
-  
-  [data-theme="light"] .site-header {
-    background: var(--bg-primary);
-    background: rgba(253, 249, 243, 0.5);
-  }
-  
-  @media (prefers-color-scheme: light) {
-    [data-theme="auto"] .site-header {
-      background: var(--bg-primary);
-      background: rgba(253, 249, 243, 0.5);
-    }
-  }
-}
 
-/* Light theme glass adjustments */
-[data-theme="light"] .site-header::after {
-  background: rgba(253, 249, 243, 0.3);
-}
-
-@media (prefers-color-scheme: light) {
-  [data-theme="auto"] .site-header::after {
-    background: rgba(253, 249, 243, 0.3);
-  }
-}
 
 .header-content {
   display: flex;
@@ -424,47 +362,19 @@ li {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  body {
-    padding-top: 4rem;
-  }
-  
   .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
     padding: 2rem 0 1rem 0;
-    
-    /* Start with nav hidden above viewport, logo at top */
-    transform: translateY(-14rem);
-    
-    /* Fallback for older browsers */
     background: var(--bg-primary);
-    
-    /* Semi-transparent base matching desktop */
-    background: rgba(19, 19, 19, 0.5);
-    
-    transition: transform 0.3s linear;
   }
   
-  /* Mobile liquid glass effect inherits from desktop */
-  
-  [data-theme="light"] .site-header {
-    background: var(--bg-primary);
-    background: rgba(253, 249, 243, 0.5);
+  /* Animate entire page up/down to show/hide nav */
+  body {
+    transform: translateY(-13rem);
+    transition: transform 0.3s ease;
   }
   
-  @media (prefers-color-scheme: light) {
-    [data-theme="auto"] .site-header {
-      background: var(--bg-primary);
-      background: rgba(253, 249, 243, 0.5);
-    }
-  }
-  
-  /* Mobile light theme liquid glass inherits from desktop */
-  
-  .site-header.open {
+  body.mobile-nav-open {
     transform: translateY(0);
   }
   
@@ -657,7 +567,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 1.5rem;
   margin: 0.3rem 0 0 0;
   width: fit-content;
 }
@@ -762,6 +672,10 @@ li {
     padding: 0 0.75rem;
   }
   
+  .page-lead .container {
+    padding: 2em 0.75rem;
+  }
+  
   .site-footer .container {
     max-width: 50em; /* Footer can be wider */
   }
@@ -829,6 +743,11 @@ li {
   /* Reduce theme picker size on tablet for better proportion */
   .theme-emoji {
     font-size: 1.2rem;
+  }
+  
+  /* Reduce theme picker spacing on tablet */
+  .theme-picker {
+    gap: 1rem;
   }
   
   /* Adjust kerning for smaller tablet font size */

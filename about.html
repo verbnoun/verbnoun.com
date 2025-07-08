@@ -18,7 +18,7 @@ permalink: /about/
 </div>
 
 <div class="about-section">
-  <div class="about-content">
+  <div class="container">
     <div class="about-text">
         <h2>Our Mission</h2>
         <div class="bilingual-content">
@@ -114,7 +114,6 @@ permalink: /about/
             <p>この名前は、言語が動作（動詞）と対象（名詞）、動きと物質、プロセスと形式の動的関係を通じて機能するという私たちの信念を反映しています。</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -125,14 +124,25 @@ permalink: /about/
   padding: 0 0 3rem 0;
 }
 
-.about-content {
-  max-width: 120ch;
-  margin: 0 auto;
-}
 
+/* MOBILE DEFAULT */
 .about-text {
   background: var(--dark-gray);
-  padding: 3rem;
+  padding: 2rem 0;
+}
+
+/* TABLET */
+@media (min-width: 769px) {
+  .about-text {
+    padding: 2rem 0;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1200px) {
+  .about-text {
+    padding: 3rem 0;
+  }
 }
 
 .about-text h2 {
@@ -296,33 +306,54 @@ permalink: /about/
 
 @media (max-width: 768px) {
   .about-text {
-    padding: 2rem;
+    padding: 2rem 0;
   }
   
   .contact-info {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 }
-/* Bilingual content layout */
+/* Bilingual content layout - mobile first */
+/* MOBILE DEFAULT - Single column with line break */
 .bilingual-content {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
+  /* Natural block flow */
 }
 
 .content-column {
-  flex: 1;
-  max-width: 64ch;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
+.content-column:first-child {
+  margin-bottom: 2rem;
+}
+
+.content-column:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET - Two column layout */
+@media (min-width: 769px) {
   .bilingual-content {
-    flex-direction: column;
-    gap: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
   }
   
   .content-column {
-    max-width: none;
+    flex: 1;
+    max-width: 64ch;
+    margin-bottom: 0;
+  }
+  
+  .content-column:first-child {
+    margin-bottom: 0;
+  }
+}
+
+/* DESKTOP - Refined two column */
+@media (min-width: 1200px) {
+  .content-column {
+    max-width: 60ch;
   }
 }
 
