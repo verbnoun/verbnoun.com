@@ -3,7 +3,6 @@ description: A literary magazine exploring the intersection of words and meaning
 url: "https://verbnoun.com"
 baseurl: ""
 
-# Build settings
 markdown: kramdown
 highlighter: rouge
 theme: minima
@@ -11,18 +10,13 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-minifier
+  - jekyll-paginate
 
-# Pagination
 paginate: 5
-paginate_path: "/articles/page:num/"
+paginate_path: "/page:num/"
 
-# Collections
-collections:
-  writers:
-    output: true
-    permalink: /:collection/:name/
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -30,15 +24,30 @@ defaults:
     values:
       layout: "post"
       author: ""
-  - scope:
-      path: ""
-      type: "writers"
-    values:
-      layout: "writer"
 
-# Social
+jekyll-minifier:
+  preserve_php: true
+  remove_spaces_inside_tags: true
+  remove_multi_spaces: true
+  remove_comments: true
+  remove_intertag_spaces: true
+  remove_quotes: false
+  compress_css: true
+  compress_javascript: true
+  compress_json: true
+  simple_doctype: false
+  remove_script_attributes: true
+  remove_style_attributes: true
+  remove_link_attributes: true
+  remove_form_attributes: false
+  remove_input_attributes: true
+  remove_javascript_protocol: true
+  remove_http_protocol: false
+  remove_https_protocol: false
+  preserve_line_breaks: false
+  simple_boolean_attributes: true
 
-# Exclude from processing
+
 exclude:
   - Gemfile
   - Gemfile.lock

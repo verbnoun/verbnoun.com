@@ -9,7 +9,10 @@
       "mcp__playwright__browser_navigate_back",
       "mcp__playwright__browser_take_screenshot",
       "Bash(rg:*)",
-      "mcp__playwright__browser_resize"
+      "mcp__playwright__browser_resize",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   },

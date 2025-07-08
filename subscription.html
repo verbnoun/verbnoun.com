@@ -8,10 +8,10 @@ permalink: /subscription/
   <div class="container">
     <div class="bilingual-content">
       <div class="content-column">
-        <p>Subscribe to receive our latest thinking on design, culture, and the ideas shaping our world.</p>
+        <p>Subscribe to receive our latest articles on design.</p>
       </div>
       <div class="content-column">
-        <p>デザイン、文化、そして私たちの世界を形作るアイデアについての最新の思考を受け取るために購読してください。</p>
+        <p>デザインに関する最新記事を受け取るために購読してください。</p>
       </div>
     </div>
   </div>
@@ -20,6 +20,15 @@ permalink: /subscription/
 <div class="newsletter-section">
   <div class="container">
     <div class="newsletter-box">
+      <h3>Newsletter</h3>
+      <div class="bilingual-content">
+        <div class="content-column">
+          <p>Receive new articles directly in your inbox.</p>
+        </div>
+        <div class="content-column">
+          <p>新しい記事を直接メールボックスで受け取ってください。</p>
+        </div>
+      </div>
       <form
         action="https://buttondown.com/api/emails/embed-subscribe/verbnoun"
         method="post"
@@ -40,7 +49,14 @@ permalink: /subscription/
   <div class="container">
     <div class="rss-box">
       <h3>RSS Feed</h3>
-      <p>Prefer RSS? Subscribe to our feed for updates in your favorite RSS reader.</p>
+      <div class="bilingual-content">
+        <div class="content-column">
+          <p>Subscribe to our feed for new articles as they are published.</p>
+        </div>
+        <div class="content-column">
+          <p>新しい記事が公開されたらフィードを購読してください。</p>
+        </div>
+      </div>
       <a href="/feed.xml" class="rss-button">RSS Feed</a>
     </div>
   </div>
@@ -50,31 +66,25 @@ permalink: /subscription/
 
 .newsletter-section {
   padding: 4rem 0;
-  display: flex;
-  justify-content: center;
 }
 
 .rss-section {
   padding: 2rem 0 4rem 0;
-  display: flex;
-  justify-content: center;
 }
 
 .newsletter-box {
-  background: var(--bg-secondary);
-  padding: 3rem;
+  padding: 0;
   max-width: 500px;
   width: 100%;
 }
 
 .rss-box {
-  background: var(--bg-secondary);
-  padding: 3rem;
+  padding: 0;
   max-width: 500px;
   width: 100%;
-  text-align: center;
 }
 
+.newsletter-box h3,
 .rss-box h3 {
   color: var(--text-primary);
   font-size: 1.5em;
@@ -82,6 +92,7 @@ permalink: /subscription/
   font-weight: normal;
 }
 
+.newsletter-box p,
 .rss-box p {
   color: var(--text-primary);
   margin-bottom: 2rem;
@@ -130,37 +141,40 @@ permalink: /subscription/
 }
 
 .newsletter-button {
-  width: 100%;
+  display: inline-block;
   padding: 1rem 2rem;
-  background: var(--accent-color);
+  background: transparent;
   color: var(--text-primary);
-  border: none;
+  border: 1px solid var(--accent-color);
   font-family: inherit;
   font-size: 1rem;
   letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .newsletter-button:hover {
-  background: var(--brick-red-light);
+  color: var(--accent-color);
+  transition: none;
 }
 
 .rss-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--accent-color);
+  background: transparent;
   color: var(--text-primary);
+  border: 1px solid var(--accent-color);
   text-decoration: none;
   font-family: inherit;
   font-size: 1rem;
   letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .rss-button:hover {
-  background: var(--brick-red-light);
+  color: var(--accent-color);
+  transition: none;
 }
 
 @media (max-width: 480px) {

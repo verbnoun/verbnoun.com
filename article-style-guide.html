@@ -1,0 +1,256 @@
+---
+layout: default
+title: Article Style Guide
+permalink: /style-guide/
+---
+
+<div class="page-lead">
+  <div class="container">
+    <div class="bilingual-content">
+      <div class="content-column">
+        <p>Guidelines for formatting and structuring articles for Verb Noun.</p>
+      </div>
+      <div class="content-column">
+        <p>Verb Nounの記事のフォーマットと構造に関するガイドライン。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="style-guide">
+  <div class="container">
+    <div class="style-content">
+      
+      <h2>Article Structure</h2>
+      
+      <h3>Front Matter</h3>
+      <p>All articles must include proper front matter with the following fields:</p>
+      <pre><code>---
+layout: post
+title: "Article Title"
+date: YYYY-MM-DD
+author: "Author Name"
+tags: [tag1, tag2, tag3]
+excerpt: "Brief description of the article for metadata and previews"
+---</code></pre>
+      
+      <h3>Required Fields</h3>
+      <ul>
+        <li><strong>layout:</strong> Must be "post"</li>
+        <li><strong>title:</strong> Descriptive title in sentence case</li>
+        <li><strong>date:</strong> Publication date in YYYY-MM-DD format</li>
+        <li><strong>author:</strong> Full name of the author (must match contributor name on About page)</li>
+        <li><strong>tags:</strong> Array of relevant tags for categorization</li>
+        <li><strong>excerpt:</strong> Brief summary for article previews</li>
+      </ul>
+      
+      <h2>Content Guidelines</h2>
+      
+      <h3>Typography Hierarchy</h3>
+      <ul>
+        <li><strong>H1:</strong> Reserved for article title (automatically generated)</li>
+        <li><strong>H2:</strong> Major section headings</li>
+        <li><strong>H3:</strong> Subsection headings</li>
+        <li><strong>H4-H6:</strong> Use sparingly for deep hierarchies</li>
+      </ul>
+      
+      <h3>Paragraph Structure</h3>
+      <p>Keep paragraphs focused and readable. Each paragraph should contain one main idea. Use line breaks between paragraphs in the markdown source for clarity.</p>
+      
+      <h3>Links and References</h3>
+      <p>Use descriptive link text. External links should open in the same window unless specifically noted. Internal links should use relative URLs when possible.</p>
+      
+      <h3>Lists</h3>
+      <p>Use unordered lists for non-sequential items and ordered lists for step-by-step processes or prioritized content.</p>
+      
+      <h2>Style Conventions</h2>
+      
+      <h3>Voice and Tone</h3>
+      <ul>
+        <li>Write in active voice when possible</li>
+        <li>Maintain a scholarly but accessible tone</li>
+        <li>Avoid jargon without explanation</li>
+        <li>Be precise and deliberate with word choice</li>
+      </ul>
+      
+      <h3>Design Terminology</h3>
+      <p>Use consistent terminology throughout articles. When introducing technical terms, provide context or brief definitions.</p>
+      
+      <h2>Tagging Guidelines</h2>
+      
+      <h3>Available Tags</h3>
+      <ul>
+        <li><strong>design:</strong> Form, function, and aesthetic philosophy</li>
+        <li><strong>technology:</strong> Tools, interfaces, and digital culture</li>
+        <li><strong>philosophy:</strong> Critical thinking on ideas and meaning</li>
+        <li><strong>psychology:</strong> Behavior and mental processes</li>
+        <li><strong>aesthetics:</strong> Beauty, taste, and sensory experience</li>
+        <li><strong>culture:</strong> Society, values, and shared experience</li>
+        <li><strong>civilization:</strong> Human organization and development</li>
+        <li><strong>japanese:</strong> Japanese design philosophy and perspectives</li>
+        <li><strong>editorial:</strong> Perspectives from the editorial team</li>
+      </ul>
+      
+      <h3>Tagging Best Practices</h3>
+      <ul>
+        <li>Use 2-4 tags per article</li>
+        <li>Choose the most relevant and specific tags</li>
+        <li>Avoid over-tagging</li>
+        <li>Consider how tags help readers discover related content</li>
+      </ul>
+      
+      <h2>Author Guidelines</h2>
+      
+      <h3>Author Attribution</h3>
+      <p>The author field must exactly match a contributor name listed on the About page. This enables proper linking to author profiles.</p>
+      
+      <h3>Contributor Profiles</h3>
+      <p>New contributors must have their profile added to the About page before their articles can be published.</p>
+      
+      <h2>File Naming</h2>
+      
+      <h3>Article Files</h3>
+      <p>Article files should be placed in the <code>_posts</code> directory and named using the format:</p>
+      <pre><code>YYYY-MM-DD-article-title-slug.md</code></pre>
+      
+      <h3>Slug Guidelines</h3>
+      <ul>
+        <li>Use lowercase letters only</li>
+        <li>Replace spaces with hyphens</li>
+        <li>Remove special characters and punctuation</li>
+        <li>Keep slugs concise but descriptive</li>
+      </ul>
+      
+      <h2>Quality Standards</h2>
+      
+      <h3>Editorial Review</h3>
+      <p>All articles undergo editorial review for:</p>
+      <ul>
+        <li>Adherence to style guidelines</li>
+        <li>Clarity and coherence of argument</li>
+        <li>Proper formatting and structure</li>
+        <li>Accuracy of technical content</li>
+      </ul>
+      
+      <h3>Functionality Requirements</h3>
+      <p>Before publication, verify that:</p>
+      <ul>
+        <li>Author links properly to About page profile</li>
+        <li>All tags correspond to existing tag pages</li>
+        <li>Internal and external links function correctly</li>
+        <li>Article displays properly across devices</li>
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+
+.style-guide {
+  padding: 0 0 3rem 0;
+}
+
+.style-content {
+  max-width: 66ch;
+  margin: 0 auto;
+}
+
+.style-content h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: var(--text-primary);
+}
+
+.style-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: var(--text-primary);
+}
+
+.style-content p {
+  margin-bottom: 1.5em;
+  color: var(--text-primary);
+}
+
+.style-content ul, .style-content ol {
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+
+.style-content li {
+  margin-bottom: 0.5em;
+  color: var(--text-primary);
+}
+
+.style-content pre {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+}
+
+.style-content code {
+  background: var(--bg-secondary);
+  padding: 0.2em 0.4em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  border: 1px solid var(--border-color);
+}
+
+.style-content pre code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.style-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Bilingual content layout - mobile first */
+.bilingual-content {
+  /* Natural block flow */
+}
+
+.content-column {
+  margin-bottom: 1.5rem;
+}
+
+.content-column:first-child {
+  margin-bottom: 2rem;
+}
+
+.content-column:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET - Two column layout */
+@media (min-width: 769px) {
+  .bilingual-content {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .content-column {
+    flex: 1;
+    max-width: 64ch;
+    margin-bottom: 0;
+  }
+  
+  .content-column:first-child {
+    margin-bottom: 0;
+  }
+}
+
+/* DESKTOP - Refined two column */
+@media (min-width: 1200px) {
+  .content-column {
+    max-width: 60ch;
+  }
+}
+
+</style>

@@ -1,107 +1,232 @@
 ---
-layout: minimal
+layout: default
 permalink: /
 ---
 
 <div class="page-lead">
   <div class="container">
-    <p>A design discipline publication</p>
+    <div class="bilingual-content">
+      <div class="content-column">
+        <p>Verb Noun is a design discipline publication.</p>
+      </div>
+      <div class="content-column">
+        <p>Verb Nounはデザイン学問の出版物です。</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="newsletter-section">
+<div class="articles-archive">
   <div class="container">
-    <div class="newsletter-box">
-      <form
-        action="https://buttondown.com/api/emails/embed-subscribe/verbnoun"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://newsletter.verbnoun.com', 'popupwindow')"
-        class="embeddable-buttondown-form">
-        <div class="form-field">
-          <label for="bd-email" class="form-label">Email Address</label>
-          <input type="email" name="email" id="bd-email" required class="newsletter-input">
+    {% if paginator.posts.size > 0 %}
+      <div class="article-list">
+        {% for post in paginator.posts %}
+          <article class="article-item">
+            <div class="article-content">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="article-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                {% if post.author %} • <a href="/about/#{{ post.author | slugify }}" class="author-link">{{ post.author }}</a>{% endif %}
+                {% if post.tags %} • {% for tag in post.tags %}{% unless forloop.first %}, {% endunless %}<a href="/tags/{{ tag | slugify }}/" class="tag-link">{{ tag }}</a>{% endfor %}{% endif %}
+              </p>
+              <div class="article-excerpt">
+                {% assign paragraphs = post.content | split: '</p>' %}
+                {% if paragraphs.size > 0 %}{{ paragraphs[0] | append: '</p>' }}{% endif %}
+                {% if paragraphs.size > 1 %}{{ paragraphs[1] | append: '</p>' }}{% endif %}
+              </div>
+              <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      
+      {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">← Newer Articles</a>
+          {% endif %}
+          
+          <span class="pagination-info">
+            Page {{ paginator.page }} of {{ paginator.total_pages }}
+          </span>
+          
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">Older Articles →</a>
+          {% endif %}
         </div>
-        <button type="submit" class="newsletter-button">Subscribe</button>
-      </form>
-    </div>
+      {% endif %}
+    {% else %}
+      <div class="no-articles">
+        <h2>No articles yet</h2>
+      </div>
+    {% endif %}
   </div>
 </div>
 
 <style>
 
-.newsletter-section {
-  padding: 4rem 0;
-  display: flex;
-  justify-content: center;
+.articles-archive {
+  padding: 0 0 3rem 0;
 }
 
-.newsletter-box {
-  background: #222;
-  padding: 3rem;
-  max-width: 500px;
-  width: 100%;
+.article-list {
+  max-width: 64ch;
+  margin: 0 auto;
 }
 
-.form-field {
-  margin-bottom: 2rem;
-}
-
-.form-label {
-  display: block;
-  color: var(--text-white);
-  font-family: inherit;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-  font-size: 0.9em;
-}
-
-.newsletter-input {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #444;
+.article-item {
   background: var(--dark-gray);
+  margin-bottom: 2rem;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.article-content {
+  width: 100%;
+  max-width: none;
+}
+
+.article-item:hover {
+  background: var(--dark-gray);
+}
+
+.article-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+.article-item h2 a {
   color: var(--text-white);
-  font-family: inherit;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  text-decoration: none;
 }
 
-.newsletter-input:focus {
-  outline: none;
-  border-color: var(--burnt-umber);
+.article-item h2 a:hover {
+  color: var(--burnt-umber);
 }
 
-.newsletter-input::placeholder {
+.article-meta {
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tag-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.tag-link:hover {
+  color: var(--accent-color);
+  transition: none;
+}
+
+.author-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.author-link:hover {
+  color: var(--accent-color);
+  transition: none;
+}
+
+.article-excerpt {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.read-more:hover {
+  color: var(--burnt-umber);
+  transition: none;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 3rem 0;
   color: var(--text-gray);
 }
 
-.newsletter-button {
-  width: 100%;
-  padding: 1rem 2rem;
-  background: var(--burnt-umber);
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--text-secondary);
+}
+
+.pagination-link {
   color: var(--text-white);
-  border: none;
-  font-family: inherit;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.45s ease;
 }
 
-.newsletter-button:hover {
-  background: #7A3A27;
+.pagination-link:hover {
+  color: var(--burnt-umber);
+  transition: none;
 }
 
-@media (max-width: 480px) {
-  .newsletter-section {
-    padding: 3rem 1rem;
+.pagination-info {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+/* Bilingual content layout - mobile first */
+/* MOBILE DEFAULT - Single column with line break */
+.bilingual-content {
+  /* Natural block flow */
+}
+
+.content-column {
+  margin-bottom: 1.5rem;
+}
+
+.content-column:first-child {
+  margin-bottom: 2rem;
+}
+
+.content-column:last-child {
+  margin-bottom: 0;
+}
+
+/* TABLET - Two column layout */
+@media (min-width: 769px) {
+  .bilingual-content {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
   }
   
-  .newsletter-box {
-    padding: 2rem;
-    margin: 0 auto;
-    max-width: calc(100vw - 2rem);
+  .content-column {
+    flex: 1;
+    max-width: 64ch;
+    margin-bottom: 0;
+  }
+  
+  .content-column:first-child {
+    margin-bottom: 0;
+  }
+}
+
+/* DESKTOP - Refined two column */
+@media (min-width: 1200px) {
+  .content-column {
+    max-width: 60ch;
   }
 }
 

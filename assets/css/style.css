@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,10 @@
   --brick-red: #810909;
   --brick-red-light: #A61B1B;
   
-  /* Mobile header positioning - use logo as reference point */
   --mobile-logo-height: 2rem;
   --desired-logo-spacing: calc(var(--mobile-logo-height) * 0.5);
 }
 
-/* Default theme (dark) */
 :root,
 [data-theme="dark"] {
   --bg-primary: #131313;
@@ -26,7 +24,6 @@
   --theme-icon-muted: #888888;
 }
 
-/* Light theme */
 [data-theme="light"] {
   --bg-primary: #FDF9F3;
   --bg-secondary: #F7F1E8;
@@ -37,7 +34,6 @@
   --theme-icon-muted: #888888;
 }
 
-/* Auto theme - follows system preference */
 @media (prefers-color-scheme: light) {
   [data-theme="auto"] {
     --bg-primary: #FDF9F3;
@@ -74,7 +70,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Consistent font weight across all themes */
 body,
 h1,
 h2,
@@ -90,7 +85,6 @@ p,
   font-weight: 400;
 }
 
-/* Typography scale following Bringhurst principles */
 h1 {
   font-size: 2.25em;
   line-height: 1.2;
@@ -157,7 +151,6 @@ small {
   line-height: 1.5;
 }
 
-/* Standard link styling */
 a {
   color: var(--text-secondary);
   text-decoration: underline;
@@ -169,7 +162,6 @@ a:hover {
   transition: none;
 }
 
-/* Navigation links (no underline) */
 .header-nav a,
 .footer-nav a,
 .nav-link,
@@ -186,24 +178,20 @@ a:hover {
   transition: none;
 }
 
-/* Read more links should be white like nav links */
 .read-more {
   color: var(--text-primary);
 }
 
-/* Active navigation states for current page */
 .nav-item.active,
 .mobile-nav-item.active {
   color: var(--accent-color);
 }
 
-/* Page lead sections across all pages */
 .page-lead {
   text-align: center;
   margin-top: 2rem;
 }
 
-/* Remove centering for bilingual content */
 .page-lead .bilingual-content {
   text-align: left;
 }
@@ -234,7 +222,6 @@ a:hover {
   text-align: center !important;
 }
 
-/* Override center alignment for bilingual content paragraphs */
 .page-lead .bilingual-content p {
   text-align: left !important;
 }
@@ -264,7 +251,6 @@ li {
   padding: 0 1.5rem;
 }
 
-/* Header */
 .site-header {
   z-index: 100;
   padding: 3rem 0 1rem 0;
@@ -309,7 +295,6 @@ li {
   margin: 0;
 }
 
-/* Mobile menu toggle */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -331,7 +316,6 @@ li {
   transition: all 0.3s ease;
 }
 
-/* Mobile navigation - hidden on desktop */
 .mobile-nav {
   display: none;
 }
@@ -340,12 +324,10 @@ li {
   margin: 0;
 }
 
-/* Ensure desktop header nav is visible */
 .header-nav {
   display: flex;
 }
 
-/* Header bottom contains logo + hamburger */
 .header-bottom {
   display: flex;
   justify-content: space-between;
@@ -353,14 +335,12 @@ li {
   width: 100%;
 }
 
-/* Hide hamburger on tablet/desktop */
 @media (min-width: 769px) {
   .mobile-menu-toggle {
     display: none;
   }
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .site-header {
     z-index: 100;
@@ -368,9 +348,8 @@ li {
     background: var(--bg-primary);
   }
   
-  /* Animate entire page up/down to show/hide nav */
   body {
-    transform: translateY(-13rem);
+    transform: translateY(-15rem);
     transition: transform 0.3s ease;
   }
   
@@ -420,7 +399,6 @@ li {
   
 }
 
-/* Hero section */
 .hero-section {
   background: var(--bg-primary);
   padding: 4rem 0;
@@ -451,7 +429,6 @@ li {
   padding: 0.8rem 1.5rem;
 }
 
-/* Recent articles */
 .recent-articles {
   padding: 3rem 0;
 }
@@ -483,7 +460,6 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Article titles should not be underlined */
 .article-card h3 a {
   text-decoration: none;
   color: var(--text-primary);
@@ -503,12 +479,10 @@ li {
   margin-top: 2rem;
 }
 
-/* View all links should not be underlined by default */
 .view-all a {
   text-decoration: none;
 }
 
-/* End of page marker */
 .page-end {
   text-align: center;
   padding: 4rem 0 0.5rem;
@@ -520,7 +494,6 @@ li {
   color: var(--accent-color);
 }
 
-/* Footer */
 .site-footer {
   background: var(--bg-primary);
   color: var(--text-secondary);
@@ -549,7 +522,6 @@ li {
   margin: 0;
 }
 
-/* Screen reader only content */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -568,7 +540,7 @@ li {
   align-items: center;
   justify-content: flex-start;
   gap: 1.5rem;
-  margin: 0.3rem 0 0 0;
+  margin: 0.5rem 0 0 0;
   width: fit-content;
 }
 
@@ -603,21 +575,18 @@ li {
   transition: color 0.3s ease;
 }
 
-/* Force all individual theme icons to use muted color by default */
 .theme-option[data-theme="light"] .theme-emoji,
 .theme-option[data-theme="auto"] .theme-emoji,
 .theme-option[data-theme="dark"] .theme-emoji {
   color: var(--theme-icon-muted) !important;
 }
 
-/* Selected theme gets accent color */
 .theme-picker[data-selected="light"] .theme-option[data-theme="light"] .theme-emoji,
 .theme-picker[data-selected="auto"] .theme-option[data-theme="auto"] .theme-emoji,
 .theme-picker[data-selected="dark"] .theme-option[data-theme="dark"] .theme-emoji {
   color: var(--accent-color) !important;
 }
 
-/* Hover color feedback system */
 .theme-option:hover .theme-emoji {
   color: var(--accent-color) !important;
 }
@@ -626,7 +595,6 @@ li {
   color: var(--theme-icon-muted) !important;
 }
 
-/* Align all icons on the same baseline */
 .theme-option[data-theme="light"] .theme-emoji,
 .theme-option[data-theme="dark"] .theme-emoji {
   transform: translateY(-1px);
@@ -637,7 +605,6 @@ li {
 }
 
 
-/* Reduced motion support for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .theme-picker *,
   .theme-option,
@@ -648,7 +615,6 @@ li {
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   .selection-indicator {
     border-width: 3px;
@@ -660,8 +626,6 @@ li {
   }
 }
 
-/* Responsive typography for apparent size consistency */
-/* Mobile: 18px base */
 @media (max-width: 500px) {
   body {
     font-size: 20px;
@@ -726,7 +690,6 @@ li {
   }
 }
 
-/* Tablet: 16px base (medium viewing distance) - default above */
 @media (min-width: 501px) and (max-width: 1199px) {
   body {
     font-size: 16px;
@@ -740,17 +703,15 @@ li {
     max-width: 50em;
   }
   
-  /* Reduce theme picker size on tablet for better proportion */
   .theme-emoji {
     font-size: 1.2rem;
   }
   
-  /* Reduce theme picker spacing on tablet */
   .theme-picker {
     gap: 1rem;
+    min-height: 1.4em;
   }
   
-  /* Adjust kerning for smaller tablet font size */
   .theme-option[data-theme="light"] {
     margin-right: 0.2rem;
   }
@@ -760,7 +721,6 @@ li {
   }
 }
 
-/* Desktop: 20px base (furthest viewing distance) */
 @media (min-width: 1200px) {
   body {
     font-size: 22px;
@@ -774,4 +734,85 @@ li {
   .site-footer .container {
     max-width: 40em;
   }
+  
+  .theme-picker {
+    min-height: 1.6em;
+  }
+}
+
+
+.post {
+  padding: 2rem 0 3rem 0;
+}
+
+.tag-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.tag-link:hover {
+  color: var(--accent-color);
+  transition: none;
+}
+
+.post-content {
+  max-width: 66ch;
+  margin: 0 auto;
+}
+
+.post-content h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: var(--text-primary);
+}
+
+.post-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: var(--text-primary);
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
+  color: var(--text-primary);
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;
+  color: var(--text-secondary);
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tags-label {
+  color: var(--text-secondary);
+}
+
+.tag {
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.45s ease;
+}
+
+.tag:hover {
+  color: var(--accent-color);
+  transition: none;
 }
